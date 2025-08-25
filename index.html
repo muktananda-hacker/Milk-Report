@@ -6,317 +6,305 @@
 <title>Nandini Milk Parlor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --primary-color: #1565C0;       /* Blue */
-  --secondary-color: #FFB300;     /* Amber */
-  --light-bg: #E3F2FD;            /* Light Sky Blue */
-  --card-bg: #FFFFFF;
-  --text-color: #333;
-  --button-bg: #1565C0;
-  --button-hover-bg: #0D47A1;
-  --back-button-bg: #CFD8DC;
-  --back-button-text: #37474F;
+    --primary-color: #1e3d59;
+    --secondary-color: #f5a623;
+    --light-bg: #f0f4f8;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --button-bg: #1e3d59;
+    --button-hover-bg: #16314a;
+    --back-button-bg: #e0e0e0;
+    --back-button-text: #616161;
+    --transition-speed: 0.3s;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--light-bg);
-  color: var(--text-color);
-  margin: 0;
-  padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 h1 {
-  text-align: center;
-  color: var(--primary-color);
-  margin-bottom: 30px;
-  font-size: 2.5em;
-  font-weight: 700;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .container {
-  max-width: 700px;
-  margin: auto;
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
 }
 
 .section {
-  background: var(--card-bg);
-  padding: 25px;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  display: none;
-  flex-direction: column;
-  gap: 15px;
+    background: var(--card-bg);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 h2 {
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--secondary-color);
-  padding-bottom: 8px;
-  margin-bottom: 20px;
-  font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 1.8em;
 }
 
 label {
-  display: block;
-  margin: 8px 0 4px;
-  font-weight: 600;
-  color: var(--primary-color);
+    display: block;
+    margin: 10px 0 6px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95em;
 }
 
 select, input[type="number"] {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    box-sizing: border-box;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 select:focus, input[type="number"]:focus {
-  outline: none;
-  border-color: var(--secondary-color);
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(245, 166, 35, 0.5);
 }
 
 button {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  background: var(--button-bg);
-  color: white;
-  font-size: 1em;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s, transform 0.2s;
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: var(--button-bg);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background var(--transition-speed), transform 0.2s;
 }
 
-button:hover { 
-  background: var(--button-hover-bg); 
-  transform: translateY(-2px); 
+button:hover {
+    background: var(--button-hover-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .back-btn {
-  background: var(--back-button-bg);
-  color: var(--back-button-text);
+    background: var(--back-button-bg);
+    color: var(--back-button-text);
 }
 
-.back-btn:hover { 
-  background: #B0BEC5; 
-  transform: translateY(-2px); 
+.back-btn:hover {
+    background: #c7c7c7;
 }
 
-.center {
-  text-align: center;
-}
+.center { text-align: center; line-height: 1.6; }
 
 #reportBox {
-  background: #f8f8f8;
-  padding: 20px;
-  border-radius: 8px;
-  min-height: 120px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  font-family: monospace;
-  color: #000;
-  border: 1px dashed #ccc;
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 12px;
+    min-height: 150px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+    color: #444;
+    border: 1px dashed #ccc;
+    line-height: 1.5;
+    font-size: 0.9em;
 }
 
-.logo-container { 
-  text-align: center; 
-  margin-bottom: 20px; 
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .logo-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid var(--secondary-color);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    background: var(--card-bg);
 }
 
 .logo-circle img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-/* Mobile-specific styles */
 @media (max-width: 600px) {
-  body { padding: 10px; }
-  h1 { font-size: 2em; }
-  .section { padding: 15px; border-radius: 10px; }
-  button { padding: 12px; font-size: 0.9em; }
+    body { padding: 10px; }
+    h1 { font-size: 2.2em; margin-bottom: 15px; }
+    .section { padding: 20px; border-radius: 15px; }
+    button { padding: 14px; font-size: 1em; }
+    .logo-circle { width: 120px; height: 120px; border-width: 4px; }
 }
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="logo-container">
-    <div class="logo-circle">
-      <img src="https://www.logopeople.in/wp-content/uploads/2023/08/Nandini-logo.jpg" alt="Nandini Logo" class="logo">
+    <div class="logo-container">
+        <div class="logo-circle">
+            <img src="https://www.logopeople.in/wp-content/uploads/2023/08/Nandini-logo.jpg" alt="Nandini Logo">
+        </div>
     </div>
-  </div>
-  <h1>Nandini Milk Parlor</h1>
+    <h1>Nandini Milk Parlor</h1>
 
-  <!-- Welcome Section -->
-  <div class="section" id="welcome" style="display:flex;">
-    <h2>Hey, welcome back!</h2>
-    <p class="center">Please select what you want to do today:</p>
-    <button onclick="showSection('avail')">Check Availability</button>
-    <button onclick="showSection('order')">Place Order</button>
-  </div>
-
-  <!-- Main Entry Section -->
-  <div class="section" id="mainEntry">
-    <h2 id="mainEntryTitle"></h2>
-    
-    <label for="itemSelect">Select Item:</label>
-    <select id="itemSelect" onchange="toggleOptions()">
-      <option value="Milk">Milk</option>
-      <option value="Curd">Curd</option>
-      <option value="Buttermilk">Buttermilk</option>
-      <option value="Lassi">Lassi</option>
-    </select>
-
-    <!-- Milk Options -->
-    <div class="options" id="milkOptions">
-      <label for="sizeSelect">Milk Size:</label>
-      <select id="sizeSelect">
-        <option value="200ml">200ml</option>
-        <option value="500ml">500ml</option>
-        <option value="1000ml">1000ml</option>
-      </select>
-      <label for="varietySelect">Milk Color:</label>
-      <select id="varietySelect">
-        <option value="Orange">Orange</option>
-        <option value="Blue">Blue</option>
-        <option value="Purple">Purple</option>
-        <option value="Green">Green</option>
-      </select>
+    <div class="section" id="welcome" style="display:flex;">
+        <h2 class="center">Hello, what's on your mind?</h2>
+        <p class="center">Please select an action below:</p>
+        <button onclick="showMainEntry('avail')">Check Availability</button>
+        <button onclick="showMainEntry('order')">Place Order</button>
     </div>
 
-    <!-- Curd Options -->
-    <div class="options" id="curdOptions" style="display:none;">
-      <label for="curdSizeSelect">Curd Size:</label>
-      <select id="curdSizeSelect">
-        <option value="200ml">200ml</option>
-        <option value="500ml">500ml</option>
-        <option value="1000ml">1000ml</option>
-      </select>
+    <div class="section" id="mainEntry">
+        <h2 id="mainEntryTitle">Milk-Report Entry</h2>
+        <label for="itemSelect">Choose Item:</label>
+        <select id="itemSelect" onchange="toggleOptions()">
+            <option value="Milk">Milk</option>
+            <option value="Curd">Curd</option>
+            <option value="Buttermilk">Buttermilk</option>
+            <option value="Lassi">Lassi</option>
+        </select>
+
+        <div class="options" id="milkOptions">
+            <label for="sizeSelect">Milk Size:</label>
+            <select id="sizeSelect"><option>200ml</option><option>500ml</option><option>1000ml</option></select>
+            <label for="varietySelect">Milk Color:</label>
+            <select id="varietySelect"><option>Orange</option><option>Blue</option><option>Purple</option><option>Green</option></select>
+        </div>
+
+        <div class="options" id="curdOptions" style="display:none;">
+            <label for="curdSizeSelect">Curd Size:</label>
+            <select id="curdSizeSelect"><option>200ml</option><option>500ml</option><option>1000ml</option></select>
+        </div>
+
+        <div class="options" id="lassiOptions" style="display:none;">
+            <label for="lassiTypeSelect">Lassi Type:</label>
+            <select id="lassiTypeSelect"><option>Mango Lassi</option><option>Sweet Lassi</option><option>Normal Lassi</option></select>
+        </div>
+
+        <label for="qtyInput">Quantity:</label>
+        <input type="number" id="qtyInput" min="1" value="1">
+
+        <label for="unitSelect">Unit:</label>
+        <select id="unitSelect"><option>Packets</option><option>Crates</option></select>
+
+        <button onclick="addItem()">Add to Report</button>
+        <button class="back-btn" onclick="goBack()">Back</button>
     </div>
 
-    <!-- Lassi Options -->
-    <div class="options" id="lassiOptions" style="display:none;">
-      <label for="lassiTypeSelect">Lassi Type:</label>
-      <select id="lassiTypeSelect">
-        <option value="Mango Lassi">Mango Lassi</option>
-        <option value="Sweet Lassi">Sweet Lassi</option>
-        <option value="Normal Lassi">Normal Lassi</option>
-      </select>
+    <div class="section" id="finalReport">
+        <h2>Report Summary</h2>
+        <pre id="reportBox"></pre>
+        <button onclick="sendToWhatsApp()">Send via WhatsApp</button>
+        <button class="back-btn" onclick="resetReport()">Start New Report</button>
     </div>
-
-    <label for="qtyInput">Enter Quantity:</label>
-    <input type="number" id="qtyInput" min="1" value="1">
-
-    <label for="unitSelect">Select Unit:</label>
-    <select id="unitSelect">
-      <option value="Packets">Packets</option>
-      <option value="Crates">Crates</option>
-    </select>
-
-    <button onclick="addReport()">Add to Report</button>
-    <button class="back-btn" onclick="goBack()">Back</button>
-  </div>
-
-  <!-- Final Report Section -->
-  <div class="section" id="finalReport">
-    <h2>Final Report</h2>
-    <pre id="reportBox"></pre>
-    <button onclick="sendToWhatsApp()">Send via WhatsApp</button>
-    <button class="back-btn" onclick="resetReport()">Start New Report</button>
-  </div>
 </div>
 
 <script>
 let reportText = "";
 let currentMode = "";
 
-// Show welcome section on page load
 window.onload = function() {
-  document.getElementById("welcome").style.display = "flex";
-  document.getElementById("mainEntry").style.display = "none";
-  document.getElementById("finalReport").style.display = "none";
+    document.getElementById("welcome").style.display = "flex";
 };
 
-function showSection(mode) {
-  currentMode = mode;
-  document.getElementById("welcome").style.display = "none";
-  document.getElementById("mainEntry").style.display = "flex";
-  document.getElementById("finalReport").style.display = "none";
-
-  document.getElementById("mainEntryTitle").innerText = 
-    mode === "avail" ? "Availability Entry" : "Order Entry";
+function showMainEntry(mode) {
+    currentMode = mode;
+    document.getElementById("welcome").style.display = "none";
+    document.getElementById("mainEntry").style.display = "flex";
+    document.getElementById("mainEntryTitle").innerText = mode === "avail" ? "Availability Entry" : "Order Entry";
 }
 
 function toggleOptions() {
-  const item = document.getElementById("itemSelect").value;
-  document.getElementById("milkOptions").style.display = item === "Milk" ? "block" : "none";
-  document.getElementById("curdOptions").style.display = item === "Curd" ? "block" : "none";
-  document.getElementById("lassiOptions").style.display = item === "Lassi" ? "block" : "none";
+    const item = document.getElementById("itemSelect").value;
+    document.getElementById("milkOptions").style.display = item === "Milk" ? "block" : "none";
+    document.getElementById("curdOptions").style.display = item === "Curd" ? "block" : "none";
+    document.getElementById("lassiOptions").style.display = item === "Lassi" ? "block" : "none";
 }
 
-function addReport() {
-  const item = document.getElementById("itemSelect").value;
-  const qty = document.getElementById("qtyInput").value;
-  const unit = document.getElementById("unitSelect").value;
+function addItem() {
+    const item = document.getElementById("itemSelect").value;
+    const qty = document.getElementById("qtyInput").value;
+    const unit = document.getElementById("unitSelect").value;
+    let entry = "";
 
-  let entry = "";
-  if(item === "Milk") {
-    const size = document.getElementById("sizeSelect").value;
-    const color = document.getElementById("varietySelect").value;
-    entry = `- ${item} - ${color}, ${size}, Quantity: ${qty} ${unit}`;
-  } else if(item === "Curd") {
-    const size = document.getElementById("curdSizeSelect").value;
-    entry = `- ${item}, ${size}, Quantity: ${qty} ${unit}`;
-  } else if(item === "Lassi") {
-    const type = document.getElementById("lassiTypeSelect").value;
-    entry = `- ${type}, Quantity: ${qty} ${unit}`;
-  } else {
-    entry = `- ${item}, Quantity: ${qty} ${unit}`;
-  }
+    if (item === "Milk") {
+        const size = document.getElementById("sizeSelect").value;
+        const color = document.getElementById("varietySelect").value;
+        entry = `- ${item} - ${color}, ${size}, Qty: ${qty} ${unit}`;
+    } else if (item === "Curd") {
+        const size = document.getElementById("curdSizeSelect").value;
+        entry = `- ${item}, ${size}, Qty: ${qty} ${unit}`;
+    } else if (item === "Lassi") {
+        const type = document.getElementById("lassiTypeSelect").value;
+        entry = `- ${type}, Qty: ${qty} ${unit}`;
+    } else {
+        entry = `- ${item}, Qty: ${qty} ${unit}`;
+    }
 
-  reportText += entry + "\n";
+    reportText += entry + "\n";
+    document.getElementById("reportBox").innerText = `*Milk-Report*\n\n${reportText}\n*Thank you*`;
+    document.getElementById("finalReport").style.display = "flex";
+    
+    // Display alert to confirm item addition
+    alert(`${item} has been added to the report!`);
 
-  document.getElementById("mainEntry").style.display = "none";
-  document.getElementById("finalReport").style.display = "flex";
-
-  document.getElementById("reportBox").innerText =
-    `*${currentMode === "avail" ? "Availability Report" : "Order Report"}*\n${reportText}*Thank you*`;
+    // Reset quantity for next entry
+    document.getElementById("qtyInput").value = 1;
 }
 
 function goBack() {
-  document.getElementById("mainEntry").style.display = "none";
-  document.getElementById("finalReport").style.display = "none";
-  document.getElementById("welcome").style.display = "flex";
+    document.getElementById("mainEntry").style.display = "none";
+    document.getElementById("finalReport").style.display = "none";
+    document.getElementById("welcome").style.display = "flex";
 }
 
 function resetReport() {
-  reportText = "";
-  document.getElementById("finalReport").style.display = "none";
-  document.getElementById("mainEntry").style.display = "none";
-  document.getElementById("welcome").style.display = "flex";
+    reportText = "";
+    document.getElementById("reportBox").innerText = "";
+    document.getElementById("finalReport").style.display = "none";
+    document.getElementById("welcome").style.display = "flex";
 }
 
 function sendToWhatsApp() {
-  const text = encodeURIComponent(document.getElementById("reportBox").innerText);
-  window.open(`https://wa.me/?text=${text}`, "_blank");
+    const text = encodeURIComponent(document.getElementById("reportBox").innerText);
+    window.open(`https://wa.me/?text=${text}`, "_blank");
 }
 </script>
 </body>
