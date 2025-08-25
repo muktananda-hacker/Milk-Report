@@ -192,7 +192,7 @@ button:hover {
     </div>
 
     <div class="section" id="mainEntry">
-        <h2 id="mainEntryTitle">Milk-Report Entry</h2>
+        <h2 id="mainEntryTitle">Report Entry</h2>
         <label for="itemSelect">Choose Item:</label>
         <select id="itemSelect" onchange="toggleOptions()">
             <option value="Milk">Milk</option>
@@ -229,7 +229,7 @@ button:hover {
     </div>
 
     <div class="section" id="finalReport">
-        <h2>Report Summary</h2>
+        <h2 id="finalReportTitle">Report Summary</h2>
         <pre id="reportBox"></pre>
         <button onclick="sendToWhatsApp()">Send via WhatsApp</button>
         <button class="back-btn" onclick="resetReport()">Start New Report</button>
@@ -237,7 +237,8 @@ button:hover {
 </div>
 
 <script>
-let reportText = "";
+let availReportText = "";
+let orderReportText = "";
 let currentMode = "";
 
 window.onload = function() {
@@ -278,15 +279,31 @@ function addItem() {
         entry = `- ${item}, Qty: ${qty} ${unit}`;
     }
 
-    reportText += entry + "\n";
-    document.getElementById("reportBox").innerText = `*Milk-Report*\n\n${reportText}\n*Thank you*`;
+    if (currentMode === "avail") {
+        availReportText += entry + "\n";
+    } else if (currentMode === "order") {
+        orderReportText += entry + "\n";
+    }
+
+    updateReportDisplay();
     document.getElementById("finalReport").style.display = "flex";
     
-    // Display alert to confirm item addition
     alert(`${item} has been added to the report!`);
 
-    // Reset quantity for next entry
     document.getElementById("qtyInput").value = 1;
+}
+
+function updateReportDisplay() {
+    const reportBox = document.getElementById("reportBox");
+    const reportTitle = document.getElementById("finalReportTitle");
+
+    if (currentMode === "avail") {
+        reportTitle.innerText = "Availability Report";
+        reportBox.innerText = `*Availability Report*\n\n${availReportText}\n*Thank you*`;
+    } else if (currentMode === "order") {
+        reportTitle.innerText = "Order Report";
+        reportBox.innerText = `*Order Report*\n\n${orderReportText}\n*Thank you*`;
+    }
 }
 
 function goBack() {
@@ -296,7 +313,8 @@ function goBack() {
 }
 
 function resetReport() {
-    reportText = "";
+    availReportText = "";
+    orderReportText = "";
     document.getElementById("reportBox").innerText = "";
     document.getElementById("finalReport").style.display = "none";
     document.getElementById("welcome").style.display = "flex";
